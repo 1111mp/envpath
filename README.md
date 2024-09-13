@@ -1,4 +1,4 @@
-# ![windows][windows] envpath
+# 🪟 envpath
 
 📌 A tool to add or remove values from the Windows PATH variable. This project is inspired by [PathEd](https://github.com/awaescher/PathEd).
 
