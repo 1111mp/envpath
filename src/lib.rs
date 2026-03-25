@@ -1,5 +1,5 @@
 use std::error::Error;
-use winreg::enums::{HKEY_LOCAL_MACHINE, KEY_READ, KEY_WRITE};
+use winreg::enums::{HKEY_CURRENT_USER, KEY_READ, KEY_WRITE};
 use winreg::RegKey;
 
 pub struct Config {
@@ -21,11 +21,8 @@ impl Config {
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    let hklm = RegKey::predef(HKEY_LOCAL_MACHINE);
-    let env = hklm.open_subkey_with_flags(
-        r"SYSTEM\CurrentControlSet\Control\Session Manager\Environment",
-        KEY_READ | KEY_WRITE,
-    )?;
+    let hkcu = RegKey::predef(HKEY_CURRENT_USER);
+    let env = hkcu.open_subkey_with_flags(r"Environment", KEY_READ | KEY_WRITE)?;
     let env_path: String = env.get_value("PATH").unwrap_or_default();
 
     // if not exist then add
