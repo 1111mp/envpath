@@ -1,12 +1,12 @@
 # 🪟 envpath
 
-📌 A tool to add or remove values from the Windows PATH variable. This project is inspired by [PathEd](https://github.com/awaescher/PathEd).
+📌 A tool to add or remove values from the current user's Windows PATH variable. This project is inspired by [PathEd](https://github.com/awaescher/PathEd).
 
 ## Examples
-###### Add a value to the Windows PATH:
+###### Add a value to the current user's Windows PATH:
 `envpath.exe add "C:\Program Files\path"`
 
-###### Remove a value from the Windows PATH:
+###### Remove a value from the current user's Windows PATH:
 `envpath.exe remove "C:\Program Files\path"`
 
 ###### Usage in a NSIS install script:
